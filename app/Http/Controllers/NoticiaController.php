@@ -8,79 +8,81 @@ use App\Models\Noticia;
 
 class NoticiaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+    $noticias = Noticia::orderByDesc('created_at')->limit(10)->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    return view('noticia', compact('noticias'));
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreNoticiaRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreNoticiaRequest $request)
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    //
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Noticia $noticia)
-    {
-        //
-    }
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \App\Http\Requests\StoreNoticiaRequest  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(StoreNoticiaRequest $request)
+  {
+    //
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Noticia $noticia)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  \App\Models\Noticia  $noticia
+   * @return \Illuminate\Http\Response
+   */
+  public function show(Noticia $noticia)
+  {
+    //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateNoticiaRequest  $request
-     * @param  \App\Models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateNoticiaRequest $request, Noticia $noticia)
-    {
-        //
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  \App\Models\Noticia  $noticia
+   * @return \Illuminate\Http\Response
+   */
+  public function edit(Noticia $noticia)
+  {
+    //
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Noticia $noticia)
-    {
-        //
-    }
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \App\Http\Requests\UpdateNoticiaRequest  $request
+   * @param  \App\Models\Noticia  $noticia
+   * @return \Illuminate\Http\Response
+   */
+  public function update(UpdateNoticiaRequest $request, Noticia $noticia)
+  {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  \App\Models\Noticia  $noticia
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy(Noticia $noticia)
+  {
+    //
+  }
 }
